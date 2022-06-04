@@ -35,7 +35,7 @@ public class Enemy_Class : MonoBehaviour
         }
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
     }
 
     

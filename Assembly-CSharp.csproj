@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\player\playerMovement.cs" />
     <Compile Include="Assets\Scripts\Projectile\IceBall.cs" />
     <Compile Include="Assets\Scripts\player\MagicCast.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Masked_Man_Animation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Presets\CasualGameBGM05\ReadMe.txt" />

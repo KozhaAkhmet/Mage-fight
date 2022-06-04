@@ -11,13 +11,14 @@ public class IceBall : Projectile_Class
     [SerializeField]
     private static int manaCost = 20;
     [SerializeField]
-    public float slowEffectPercentage = 0.2f;
+    public float slowEffect = 1.5f;
 
     IceBall() : base(damage, speed, manaCost) { }
 
     private Rigidbody2D rb;
     private Vector3 contactPosition;
     private Mage player;
+    private float blue = 0f;
 
     private bool trigger = false;
 
@@ -47,13 +48,13 @@ public class IceBall : Projectile_Class
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //transform.rotation = Quaternion.FromToRotation( rb.velocity, new Vector3( collision.contacts[0] ,0));
         if (!collision.gameObject.CompareTag("Terrain"))
         {
-            //Vector3. collision.contacts[0].normal
-            //transform.position = Vector3. collision.contacts[0];
             trigger = true;
         }
+        if (collision.gameObject.CompareTag("Traps"))
+            collision.gameObject.GetComponent<Renderer>().material.SetColor( "_Color", new Color(0,0,blue = blue + 0.2f,1));
+            
 
     }
 }

@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 2691062422853038639}
   - component: {fileID: 2691062422853038638}
   - component: {fileID: 6360031979490833577}
-  - component: {fileID: 2691062422853038637}
   - component: {fileID: 2691062422853038632}
   - component: {fileID: 2691062422853038635}
   - component: {fileID: 2691062422853038636}
+  - component: {fileID: 660674363}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: Masked Man
   m_TagString: Traps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,22 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.60849464, y: 0.7915938}
   m_EdgeRadius: 0
---- !u!58 &2691062422853038637
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2691062422853038634}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
 --- !u!50 &2691062422853038632
 Rigidbody2D:
   serializedVersion: 4
@@ -166,6 +150,8 @@ MonoBehaviour:
   _damage: 20
   _speed: 4
   _impactForce: 2
+  _playerDistance: 3
+  player: {fileID: 0}
 --- !u!95 &2691062422853038636
 Animator:
   serializedVersion: 3
@@ -185,3 +171,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &660674363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691062422853038634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e19af8c7874d934f8833699e26d5510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
