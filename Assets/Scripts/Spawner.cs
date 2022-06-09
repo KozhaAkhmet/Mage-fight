@@ -5,40 +5,65 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    private float areaWidth;
-    [SerializeField]
-    private float areaHeight;
-    [SerializeField]
     private float repeatRate = 2;
+    private float timeStamp = 0f;
+
+    public GameObject enemyObject;
+    public Transform leftTopCorner;
+    public Transform rightBottomCorner;
+
+    private GameObject preSpawnObject;
+
     
-    public Masked_Man enemyObject;
-    private Vector3 spawnPosition;
-    private GameObject spawnPoint;
+    
+    
     void Start()
     {
-        InvokeRepeating("Spawn", 0f, repeatRate);
-        DebugArea();  // Draw Spawn Area 
-        
+        //InvokeRepeating("Spawn", 0f, repeatRate);
     }
 
     void Update()
     {
         
+        RandomSpawnPoint();
+        if (timeStamp <= Time.time)
+        {
+            StartCoroutine(Spawn());
+            timeStamp = Time.time + 2f;
+        }
+        
+        
     }
 
-    private void Spawn()
+    IEnumerator Spawn()
     {
-        spawnPosition.x = Random.Range(-areaWidth / 2 + transform.position.x, areaWidth / 2 + transform.position.x);
-        spawnPosition.y = Random.Range(-areaHeight / 2 + transform.position.y, areaHeight / 2 + transform.position.y);
+        Vector3 randomPoint = RandomSpawnPoint();
+        preSpawnObject = new GameObject();
+        preSpawnObject.gameObject.AddComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("2D Pixel Dungeon Asset Pack/interface/square_right_4");
+
+        preSpawnObject.transform.position = randomPoint;
+
+        yield return new WaitForSeconds(1f);
+        Debug.Log("Spawn");
+        Instantiate(enemyObject, randomPoint, Quaternion.identity);
+
+        yield return new WaitForSeconds(0.2f);
+        Destroy(preSpawnObject.gameObject);
+        
+    }
+    
+    public Vector3 RandomSpawnPoint()
+    {
+        Vector3 spawnPosition;
+        spawnPosition.x = Random.Range(leftTopCorner.position.x - transform.position.x, rightBottomCorner.position.x - transform.position.x);
+        spawnPosition.y = Random.Range(rightBottomCorner.position.y - transform.position.y, leftTopCorner.position.y - transform.position.y);
+
         spawnPosition.z = 0;
-        Instantiate(enemyObject, spawnPosition, Quaternion.identity);
+
+        spawnPosition += transform.position;
+        return spawnPosition;
     }
-    private void DebugArea()
-    {
-        Debug.DrawLine(transform.position + new Vector3(areaWidth / 2, areaHeight / 2), transform.position + new Vector3(-areaWidth / 2, areaHeight / 2),new Color(1, 0, 0, 1), 10f); // Top Border
-        Debug.DrawLine(transform.position + new Vector3(areaWidth / 2, areaHeight / 2), transform.position + new Vector3(areaWidth / 2, -areaHeight / 2), new Color(1, 0, 0, 1), 10f);// Right Border
-        Debug.DrawLine(transform.position + new Vector3(areaWidth / 2, -areaHeight / 2), transform.position - new Vector3(areaWidth / 2, areaHeight / 2), new Color(1, 0, 0, 1), 10f);// Bottom Border
-        Debug.DrawLine(transform.position - new Vector3(areaWidth / 2, areaHeight / 2), transform.position + new Vector3(-areaWidth / 2, areaHeight / 2), new Color(1, 0, 0, 1), 10f);// Left Border
-    }
+    
+    
     
 }

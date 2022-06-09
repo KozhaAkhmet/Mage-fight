@@ -56,36 +56,36 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Presets\Scripts\EndMenu.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\EndMenu.cs" />
     <Compile Include="Assets\Scripts\Projectile\FireBall.cs" />
-    <Compile Include="Assets\Presets\Scripts\Player_Death.cs" />
-    <Compile Include="Assets\Presets\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Player_Death.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\player\Mage_Class.cs" />
     <Compile Include="Assets\Scripts\Projectile\Projectile_Class.cs" />
     <Compile Include="Assets\Scripts\Enemies\Player_Follow.cs" />
-    <Compile Include="Assets\Presets\Scripts\Finish.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Finish.cs" />
     <Compile Include="Assets\Scripts\Player_Class.cs" />
     <Compile Include="Assets\Scripts\TextBox.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy_Class.cs" />
     <Compile Include="Assets\Scripts\player\Mage.cs" />
     <Compile Include="Assets\Scripts\cameracontroller.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Presets\Scripts\StartMenu.cs" />
-    <Compile Include="Assets\Presets\Scripts\ItemCllector.cs" />
-    <Compile Include="Assets\Presets\Scripts\Trampoline_Animation.cs" />
-    <Compile Include="Assets\Presets\Scripts\Trampoline.cs" />
-    <Compile Include="Assets\Presets\Scripts\StickyPlatform.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\StartMenu.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\ItemCllector.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Trampoline_Animation.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Trampoline.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\StickyPlatform.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Masked_Man_Animation.cs" />
     <Compile Include="Assets\Scripts\player\MouseFollower.cs" />
-    <Compile Include="Assets\Presets\Scripts\Waipoint_Follower.cs" />
-    <Compile Include="Assets\Presets\Scripts\Fan.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Waipoint_Follower.cs" />
+    <Compile Include="Assets\Resources\Presets\Scripts\Fan.cs" />
     <Compile Include="Assets\Scripts\Enemies\Masked_Man.cs" />
     <Compile Include="Assets\Scripts\player\playerMovement.cs" />
     <Compile Include="Assets\Scripts\Projectile\IceBall.cs" />
     <Compile Include="Assets\Scripts\player\MagicCast.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Masked_Man_Animation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Presets\CasualGameBGM05\ReadMe.txt" />
+    <None Include="Assets\Resources\Presets\CasualGameBGM05\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
